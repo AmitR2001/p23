@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NFC Tag Data</h1>
+        <div id="nfc-data">
+            <p><strong>Full Name:</strong> <span id="full-name"></span></p>
+            <p><strong>Age:</strong> <span id="age"></span></p>
+            <p><strong>Gender:</strong> <span id="gender"></span></p>
+            <p><strong>Blood Type:</strong> <span id="blood-type"></span></p>
+            <p><strong>Allergies:</strong> <span id="allergies"></span></p>
+            <p><strong>Chronic Conditions:</strong> <span id="chronic-conditions"></span></p>
+            <p><strong>Current Medications:</strong> <span id="current-medications"></span></p>
+            <p><strong>Emergency Contact:</strong> <span id="emergency-contact"></span></p>
+            <p><strong>Immunization Records:</strong> <span id="immunization-records"></span></p>
+        </div>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Assuming NFC data is stored in localStorage for demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const nfcData = JSON.parse(localStorage.getItem('nfcData'));
+            if (nfcData) {
+                document.getElementById('full-name').textContent = nfcData.fullName || 'N/A';
+                document.getElementById('age').textContent = nfcData.age || 'N/A';
+                document.getElementById('gender').textContent = nfcData.gender || 'N/A';
+                document.getElementById('blood-type').textContent = nfcData.bloodType || 'N/A';
+                document.getElementById('allergies').textContent = nfcData.allergies || 'N/A';
+                document.getElementById('chronic-conditions').textContent = nfcData.chronicConditions || 'N/A';
+                document.getElementById('current-medications').textContent = nfcData.currentMedications || 'N/A';
+                document.getElementById('emergency-contact').textContent = nfcData.emergencyContact || 'N/A';
+                document.getElementById('immunization-records').textContent = nfcData.immunizationRecords || 'N/A';
+            }
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
