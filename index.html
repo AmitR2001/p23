@@ -3,95 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFC Writer/Reader</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            overflow-y: auto;
-            max-height: 90vh;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        p {
-            text-align: center;
-            color: #333;
-        }
-    </style>
+    <title>NFC Web App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>NFC Writer/Reader</h1>
-        <label for="full_name">Full Name:</label>
-        <input type="text" id="full_name" name="full_name" required>
+        <h1>NFC Tag Reader/Writer</h1>
+        <form id="nfc-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" required>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
 
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
 
-        <label for="blood_type">Blood Type:</label>
-        <input type="text" id="blood_type" name="blood_type" required>
+            <label for="blood-type">Blood Type:</label>
+            <input type="text" id="blood-type" required>
 
-        <label for="allergies">Allergies:</label>
-        <input type="text" id="allergies" name="allergies">
+            <label for="allergies">Allergies:</label>
+            <input type="text" id="allergies">
 
-        <label for="chronic_conditions">Chronic Conditions:</label>
-        <input type="text" id="chronic_conditions" name="chronic_conditions">
+            <label for="chronic-conditions">Chronic Conditions:</label>
+            <input type="text" id="chronic-conditions">
 
-        <label for="current_medications">Current Medications:</label>
-        <input type="text" id="current_medications" name="current_medications">
+            <label for="current-medications">Current Medications:</label>
+            <input type="text" id="current-medications">
 
-        <label for="emergency_contact">Emergency Contact:</label>
-        <input type="text" id="emergency_contact" name="emergency_contact" required>
+            <label for="emergency-contact">Emergency Contact:</label>
+            <input type="text" id="emergency-contact" required>
 
-        <label for="immunization_records">Immunization Records:</label>
-        <input type="text" id="immunization_records" name="immunization_records">
+            <label for="immunization-records">Immunization Records:</label>
+            <input type="text" id="immunization-records">
 
-        <button id="writeButton">Write to NFC Tag</button>
-        <button id="readButton">Read from NFC Tag</button>
-        <p id="message"></p>
+            <button type="button" id="write-btn">Write to NFC</button>
+            <button type="button" id="read-btn">Read from NFC</button>
+        </form>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
