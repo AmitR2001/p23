@@ -1,46 +1,22 @@
 document.getElementById('writeButton').addEventListener('click', async () => {
-    const fullName = document.getElementById('fullName').value;
+    const fullName = document.getElementById('full_name').value;
     const age = document.getElementById('age').value;
     const gender = document.getElementById('gender').value;
-    const bloodType = document.getElementById('bloodType').value;
-    const drugAllergies = document.getElementById('drugAllergies').value;
-    const foodAllergies = document.getElementById('foodAllergies').value;
-    const environmentalAllergies = document.getElementById('environmentalAllergies').value;
-    const diabetes = document.getElementById('diabetes').value;
-    const hypertension = document.getElementById('hypertension').value;
-    const asthma = document.getElementById('asthma').value;
-    const heartDisease = document.getElementById('heartDisease').value;
-    const kidneyDisease = document.getElementById('kidneyDisease').value;
-    const currentMedications = document.getElementById('currentMedications').value;
-    const medicationChanges = document.getElementById('medicationChanges').value;
-    const surgeries = document.getElementById('surgeries').value;
-    const illnesses = document.getElementById('illnesses').value;
-    const emergencyContactName = document.getElementById('emergencyContactName').value;
-    const emergencyContactRelationship = document.getElementById('emergencyContactRelationship').value;
-    const emergencyContactPhone = document.getElementById('emergencyContactPhone').value;
-    const tetanus = document.getElementById('tetanus').value;
-    const covid19 = document.getElementById('covid19').value;
-    const otherImmunizations = document.getElementById('otherImmunizations').value;
-    const smoker = document.getElementById('smoker').value;
-    const alcohol = document.getElementById('alcohol').value;
-    const dietaryRestrictions = document.getElementById('dietaryRestrictions').value;
-    const physicianName = document.getElementById('physicianName').value;
-    const physicianContact = document.getElementById('physicianContact').value;
-    const insuranceProvider = document.getElementById('insuranceProvider').value;
-    const insurancePolicy = document.getElementById('insurancePolicy').value;
+    const bloodType = document.getElementById('blood_type').value;
+    const allergies = document.getElementById('allergies').value;
+    const chronicConditions = document.getElementById('chronic_conditions').value;
+    const currentMedications = document.getElementById('current_medications').value;
+    const emergencyContact = document.getElementById('emergency_contact').value;
+    const immunizationRecords = document.getElementById('immunization_records').value;
 
-    const message = `
-        1.PI|FN:${fullName}|A:${age}|G:${gender}|BT:${bloodType}
-        2.AL|D:${drugAllergies}|F:${foodAllergies}|E:${environmentalAllergies}
-        3.CC|D:${diabetes}|H:${hypertension}|A:${asthma}|HD:${heartDisease}|KD:${kidneyDisease}
-        4.MED|C:${currentMedications}|CH:${medicationChanges}
-        5.PMH|S:${surgeries}|I:${illnesses}
-        6.EC|N:${emergencyContactName}|R:${emergencyContactRelationship}|P:${emergencyContactPhone}
-        7.IMM|T:${tetanus}|C:${covid19}|O:${otherImmunizations}
-        8.LF|S:${smoker}|A:${alcohol}|DR:${dietaryRestrictions}
-        9.PHY|N:${physicianName}|C:${physicianContact}
-        10.INS|P:${insuranceProvider}|PN:${insurancePolicy}
-    `.trim();
+    // const message = `
+    //     1.PI|FN:${fullName}|A:${age}|G:${gender}|BT:${bloodType}
+    //     2.AL|A:${allergies}
+    //     3.CC|C:${chronicConditions}
+    //     4.MED|C:${currentMedications}
+    //     5.EC|C:${emergencyContact}
+    //     6.IMM|I:${immunizationRecords}
+    // `.trim();
 
     if ('NDEFReader' in window) {
         try {
@@ -105,8 +81,6 @@ document.getElementById('readButton').addEventListener('click', async () => {
                             <div class="container">
                                 <h1>NFC Tag Data</h1>
                                 <pre>${data}</pre>
-                                <p><a href="tel:${document.getElementById('physicianContact').value}">Call Physician</a></p>
-                                <p><a href="tel:${document.getElementById('emergencyContactPhone').value}">Call Emergency Contact</a></p>
                             </div>
                         </body>
                         </html>
