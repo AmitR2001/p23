@@ -9,14 +9,14 @@ document.getElementById('writeButton').addEventListener('click', async () => {
     const emergencyContact = document.getElementById('emergency_contact').value;
     const immunizationRecords = document.getElementById('immunization_records').value;
 
-    // const message = `
-    //     1.PI|FN:${fullName}|A:${age}|G:${gender}|BT:${bloodType}
-    //     2.AL|A:${allergies}
-    //     3.CC|C:${chronicConditions}
-    //     4.MED|C:${currentMedications}
-    //     5.EC|C:${emergencyContact}
-    //     6.IMM|I:${immunizationRecords}
-    // `.trim();
+    const message = `
+        1.PI|FN:${fullName}|A:${age}|G:${gender}|BT:${bloodType}
+        2.AL|A:${allergies}
+        3.CC|C:${chronicConditions}
+        4.MED|C:${currentMedications}
+        5.EC|C:${emergencyContact}
+        6.IMM|I:${immunizationRecords}
+    `.trim();
 
     if ('NDEFReader' in window) {
         try {
